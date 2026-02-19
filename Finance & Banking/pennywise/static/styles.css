@@ -1,0 +1,64 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f6f6f8;
+}
+
+.navbar {
+  background: #222;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar a {
+  color: #fff;
+  margin-right: 0.75rem;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 6px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+input,
+select,
+button {
+  padding: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+}
+
+.flash-messages {
+  list-style: none;
+  padding: 0.5rem;
+  margin: 0 0 1rem 0;
+  background: #ffe8e8;
+  border: 1px solid #ffb3b3;
+}

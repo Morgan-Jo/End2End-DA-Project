@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Real-Time FX Insight Hub</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Real-Time FX Insight Hub</h1>
+        <h2>Currency Converter</h2>
+
+        {% if error %}
+            <div class="alert alert-error">{{ error }}</div>
+        {% endif %}
+
+        <form method="post" class="converter-form">
+            <label>
+                Amount
+                <input type="text" name="amount" placeholder="100" required>
+            </label>
+
+            <label>
+                From
+                <select name="from_currency">
+                    {% for cur in currencies %}
+                    <option value="{{ cur }}">{{ cur }}</option>
+                    {% endfor %}
+                </select>
+            </label>
+
+            <label>
+                To
+                <select name="to_currency">
+                    {% for cur in currencies %}
+                    <option value="{{ cur }}">{{ cur }}</option>
+                    {% endfor %}
+                </select>
+            </label>
+
+            <button type="submit">Convert</button>
+        </form>
+
+        {% if conversion_info %}
+            <div class="result">
+                <p>
+                    {{ conversion_info.amount }} {{ conversion_info.from }}
+                    =
+                    {{ "%.4f"|format(conversion_info.converted) }} {{ conversion_info.to }}
+                </p>
+            </div>
+        {% endif %}
+
+        <h2>Latest FX Rates (sample)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Currency</th>
+                    <th>Rate vs USD</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cur, rate in preview_rates.items() %}
+                <tr>
+                    <td>{{ cur }}</td>
+                    <td>{{ "%.4f"|format(rate) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <p class="note">
+            Historical analysis and volatility dashboards are available in Tableau using the exported CSV/XLSX files.
+        </p>
+    </div>
+</body>
+</html>

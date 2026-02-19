@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Dashboard – PennyWise{% endblock %}
+
+{% block content %}
+  <h2>Dashboard</h2>
+
+  <form method="get">
+    <label>Month
+      <input type="number" name="month" min="1" max="12" value="{{ month }}" />
+    </label>
+    <label>Year
+      <input type="number" name="year" min="2000" max="2100" value="{{ year }}" />
+    </label>
+    <button type="submit">Update</button>
+  </form>
+
+  <p>Total for {{ month }}/{{ year }}: <strong>{{ "%.2f"|format(total_monthly) }}</strong></p>
+
+  {% if labels %}
+    <canvas id="categoryChart" width="400" height="200"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      const ctx = document.getElementById('categoryChart').getContext('2d');
+      const chart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: {{ labels|tojson }},
+          datasets: [{
+            data: {{ values|tojson }},
+          }]
+        },
+        options: {
+          responsive: true,
+        }
+      });
+    </script>
+  {% else %}
+    <p>No expenses for this month yet.</p>
+  {% endif %}
+{% endblock %}

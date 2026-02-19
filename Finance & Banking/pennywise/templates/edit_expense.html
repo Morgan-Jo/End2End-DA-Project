@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Edit Expense – PennyWise{% endblock %}
+
+{% block content %}
+  <h2>Edit Expense</h2>
+  <form method="post">
+    <label>Amount
+      <input type="number" step="0.01" name="amount" value="{{ expense.amount }}" required />
+    </label>
+    <label>Category
+      <input type="text" name="category" value="{{ expense.category }}" required />
+    </label>
+    <label>Date
+      <input type="date" name="date" value="{{ expense.date.strftime('%Y-%m-%d') }}" />
+    </label>
+    <label>Description
+      <input type="text" name="description" value="{{ expense.description }}" />
+    </label>
+    <button type="submit">Save</button>
+  </form>
+{% endblock %}

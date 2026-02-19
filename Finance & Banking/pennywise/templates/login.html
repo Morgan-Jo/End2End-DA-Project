@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Login – PennyWise{% endblock %}
+
+{% block content %}
+  <h2>Login</h2>
+  <form method="post">
+    <label>Email
+      <input type="email" name="email" required />
+    </label>
+    <label>Password
+      <input type="password" name="password" required />
+    </label>
+    <button type="submit">Log in</button>
+  </form>
+{% endblock %}
