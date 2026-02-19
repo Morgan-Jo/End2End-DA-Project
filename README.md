@@ -113,16 +113,16 @@ Each project folder typically contains:
 - Documentation aligned to real world data roles
 
 ## Workflow
-1. Data Ingestion
-  - Load raw data using Python and validate schema and structure.
-2. Data Cleaning
-  - Handle missing values, standardise formats, remove duplicates, and validate integrity.
-3. Transformation
-   - Create analysis ready datasets using SQL and Python transformations.
-4. Exploratory Analysis
-  - Identify trends, anomalies, and relationships using statistical summaries and visualisations.
-5. Dashboard Development
-  - Export curated datasets to BI tools for stakeholder facing dashboards.]
+1. **Data Ingestion**
+    - Load raw data using Python and validate schema and structure.
+2. **Data Cleaning**
+    - Handle missing values, standardise formats, remove duplicates, and validate integrity.
+3. **Transformation**
+    - Create analysis ready datasets using SQL and Python transformations.
+4. **Exploratory Analysis**
+    - Identify trends, anomalies, and relationships using statistical summaries and visualisations.
+5. **Dashboard Development**
+    - Export curated datasets to BI tools for stakeholder facing dashboards.]
 
 ## Skills Demonstrated
 
